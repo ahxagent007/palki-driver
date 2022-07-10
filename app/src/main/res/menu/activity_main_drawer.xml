@@ -3,18 +3,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="single" android:id="@+id/grp_1" >
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/nav_profile"
             android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:title="@string/menu_profile" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_dashbaord"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:title="@string/menu_dashboard" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_leaderboard"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:title="@string/menu_leaderboard" />
+    </group>
+
+    <group android:checkableBehavior="single" android:id="@+id/grp_2">
+        <item
+            android:id="@+id/nav_driver"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_driver" />
+        <item
+            android:id="@+id/nav_credit"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu_credit" />
+        <item
+            android:id="@+id/nav_offer"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_offer" />
+    </group>
+
+    <group android:checkableBehavior="single" android:id="@+id/grp_3">
+        <item
+            android:id="@+id/nav_notifications"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_notifications" />
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu_help" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_settings" />
+    </group>
+
+    <group android:checkableBehavior="single" android:id="@+id/grp_4">
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_logout" />
+
     </group>
 </menu>
