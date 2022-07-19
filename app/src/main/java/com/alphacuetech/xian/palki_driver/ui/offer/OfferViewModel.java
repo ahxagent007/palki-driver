@@ -10,7 +10,7 @@ public class OfferViewModel extends ViewModel {
 
     public OfferViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("This is OfferViewModel fragment");
     }
 
     public LiveData<String> getText() {

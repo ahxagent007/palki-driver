@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.alphacuetech.xian.palki_driver.databinding.FragmentSlideshowBinding;
+import com.alphacuetech.xian.palki_driver.databinding.FragmentLeaderboardBinding;
 
 public class LeaderboardFragment extends Fragment {
 
-    private FragmentSlideshowBinding binding;
+    private FragmentLeaderboardBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        LeaderboardViewModel slideshowViewModel =
+        LeaderboardViewModel leaderboardViewModel =
                 new ViewModelProvider(this).get(LeaderboardViewModel.class);
 
-        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
+        binding = FragmentLeaderboardBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textGallery;
+        leaderboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

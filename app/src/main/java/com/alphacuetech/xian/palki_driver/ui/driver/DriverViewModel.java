@@ -10,7 +10,7 @@ public class DriverViewModel extends ViewModel {
 
     public DriverViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("This is DriverViewModel fragment");
     }
 
     public LiveData<String> getText() {

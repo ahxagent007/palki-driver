@@ -3,23 +3,65 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_dashbaord">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.alphacuetech.xian.palki_driver.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_dashbaord"
+        android:name="com.alphacuetech.xian.palki_driver.ui.dashboard.DashboardFragment"
+        android:label="@string/menu_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.alphacuetech.xian.palki_driver.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_credit"
+        android:name="com.alphacuetech.xian.palki_driver.ui.credit.CreditFragment"
+        android:label="@string/menu_credit"
+        tools:layout="@layout/fragment_credit" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.alphacuetech.xian.palki_driver.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_driver"
+        android:name="com.alphacuetech.xian.palki_driver.ui.driver.DriverFragment"
+        android:label="@string/menu_driver"
+        tools:layout="@layout/fragment_driver" />
+
+
+    <fragment
+        android:id="@+id/nav_help"
+        android:name="com.alphacuetech.xian.palki_driver.ui.help.HelpFragment"
+        android:label="@string/menu_help"
+        tools:layout="@layout/fragment_help" />
+
+    <fragment
+        android:id="@+id/nav_leaderboard"
+        android:name="com.alphacuetech.xian.palki_driver.ui.leaderboard.LeaderboardFragment"
+        android:label="@string/menu_leaderboard"
+        tools:layout="@layout/fragment_leaderboard" />
+
+
+    <fragment
+        android:id="@+id/nav_notifications"
+        android:name="com.alphacuetech.xian.palki_driver.ui.notifications.NotificationsFragment"
+        android:label="@string/menu_notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/nav_offer"
+        android:name="com.alphacuetech.xian.palki_driver.ui.offer.OfferFragment"
+        android:label="@string/menu_offer"
+        tools:layout="@layout/fragment_offer" />
+
+
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.alphacuetech.xian.palki_driver.ui.profile.ProfileFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.alphacuetech.xian.palki_driver.ui.settings.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />
+
+
 </navigation>

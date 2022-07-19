@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.alphacuetech.xian.palki_driver.databinding.FragmentSlideshowBinding;
+import com.alphacuetech.xian.palki_driver.databinding.FragmentOfferBinding;
 
 public class OfferFragment extends Fragment {
 
-    private FragmentSlideshowBinding binding;
+    private FragmentOfferBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        OfferViewModel slideshowViewModel =
+        OfferViewModel offerViewModel =
                 new ViewModelProvider(this).get(OfferViewModel.class);
 
-        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
+        binding = FragmentOfferBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textGallery;
+        offerViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
