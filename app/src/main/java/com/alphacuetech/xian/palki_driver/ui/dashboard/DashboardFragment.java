@@ -16,16 +16,17 @@ public class DashboardFragment extends Fragment {
 
     private FragmentDashboardBinding binding;
 
+
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        DashboardViewModel slideshowViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
-
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textGallery;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        TextView TV_dummy = binding.TVDummy;
+
+        TV_dummy.setText("KISU EKTA ROHIM");
+
         return root;
     }
 

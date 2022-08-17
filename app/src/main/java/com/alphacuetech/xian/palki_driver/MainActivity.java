@@ -2,6 +2,7 @@ package com.alphacuetech.xian.palki_driver;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -45,6 +46,9 @@ private ActivityMainBinding binding;
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        /*binding.BTNButton
+        Button BTN_button = findViewById(R.id.BTN_button);*/
     }
 
     @Override
