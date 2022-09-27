@@ -14,12 +14,16 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="80dp"
             android:background="?attr/colorPrimary"
+            app:title="@string/app_name"
+            app:subtitle="month: 15 August"
             app:popupTheme="@style/Theme.PalkiDriver.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <include layout="@layout/content_main"
+
+        />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

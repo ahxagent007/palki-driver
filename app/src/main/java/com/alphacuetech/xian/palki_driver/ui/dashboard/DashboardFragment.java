@@ -23,9 +23,9 @@ public class DashboardFragment extends Fragment {
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        TextView TV_dummy = binding.TVDummy;
+       // TextView TV_dummy = binding.TVDummy;
 
-        TV_dummy.setText("KISU EKTA ROHIM");
+       // TV_dummy.setText("KISU EKTA ROHIM");
 
         return root;
     }

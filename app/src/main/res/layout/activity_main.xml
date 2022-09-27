@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    android:orientation="horizontal"
+    android:background="@color/yellow"
+    >
 
-    <include
-        android:id="@+id/app_bar_main"
-        layout="@layout/app_bar_main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
+    <!--Students grades are uploaded by months
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
@@ -22,10 +21,155 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer" />
+-->
+    <!--
+   <androidx.cardview.widget.CardView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:cardElevation="10dp"
+       app:cardCornerRadius="20dp"
 
-    <Button
-        android:id="@+id/BTN_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+       android:layout_margin="10dp"
+       app:cardBackgroundColor="@color/white"
+       app:cardMaxElevation="12dp"
+       app:cardPreventCornerOverlap="true"
+       app:cardUseCompatPadding="true"
+       >
 
-</androidx.drawerlayout.widget.DrawerLayout>
+
+       In the above cardview widget
+       cardelevation property will give elevation to your card view
+       card corner radius will provide radius to your card view
+       card background color will give background color to your card view
+       card max elevation will give the cardview maximum elevation
+       card prevent corner overlap will add padding to CardView on v20 and before to prevent intersections between the Card content and rounded corners.
+       card use compact padding will add padding in API v21+ as well to have the same measurements with previous versions.
+       below are the two widgets imageview and text view we are displaying inside our card view.
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+
+            android:layout_margin="10dp"
+            android:id="@+id/img"
+            android:contentDescription="@string/app_name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+
+
+
+    </androidx.cardview.widget.CardView>
+    -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        >
+
+    </ImageView>
+
+    <TableLayout
+        android:background="@drawable/roundedlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Login"
+            android:layout_marginBottom="20dp"
+            android:textSize="40dp">
+
+        </TextView>
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mobile No"
+                android:outlineAmbientShadowColor="@color/dark_blue"
+                >
+
+
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:layout_marginTop="34dp"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="PassWord"
+                >
+
+
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/loginbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundedcornerbtn"
+            android:text="Login"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            ></Button>
+        <TextView
+            android:gravity="center"
+            android:id="@+id/text2"
+            android:layout_margin="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="forgot Pass?"
+            android:textColor="#9E0219"
+            />
+        <Button
+            android:id="@+id/regbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundedcornerbtn"
+            android:text="Registration"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            ></Button>
+
+    </TableLayout>
+
+
+
+
+</TableLayout>
