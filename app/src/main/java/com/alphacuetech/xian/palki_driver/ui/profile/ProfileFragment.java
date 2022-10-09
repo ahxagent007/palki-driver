@@ -5,15 +5,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.alphacuetech.xian.palki_driver.Activities.AfterLogin;
 import com.alphacuetech.xian.palki_driver.Activities.ProfileDetails;
 import com.alphacuetech.xian.palki_driver.R;
 import com.alphacuetech.xian.palki_driver.databinding.FragmentProfileBinding;
