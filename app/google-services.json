@@ -45,12 +45,20 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:335615211178:android:935f25947dd45c34fa82d3",
+        "mobilesdk_app_id": "1:335615211178:android:5ed4b2d8601d30f4fa82d3",
         "android_client_info": {
           "package_name": "com.alphacuetech.xian.palki_driver"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "335615211178-279j4sbpo9h4ssulkh9h9sjagvats5ug.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alphacuetech.xian.palki_driver",
+            "certificate_hash": "7803f3e97d557d5a463358e1e24e950610cdf341"
+          }
+        },
         {
           "client_id": "335615211178-5i25nd6v8298d0splqkalfjhsidntr3j.apps.googleusercontent.com",
           "client_type": 3
