@@ -17,6 +17,12 @@
         android:label="@string/menu_livebids"
         tools:layout="@layout/fragment_livebids" />
 
+    <fragment
+        android:id="@+id/nav_bidresults"
+        android:name="com.alphacuetech.xian.palki_driver.ui.BidResults.BidresultsFragment"
+        android:label="@string/menu_bidresults"
+        tools:layout="@layout/fragment_bidresults" />
+
 
     <fragment
         android:id="@+id/nav_credit"

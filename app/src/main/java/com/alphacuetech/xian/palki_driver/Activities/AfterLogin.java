@@ -1,7 +1,6 @@
 package com.alphacuetech.xian.palki_driver.Activities;
 
 import static com.alphacuetech.xian.palki_driver.R.id.nav_host_fragment_content_main;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -42,7 +41,7 @@ public class AfterLogin extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_dashbaord, R.id.nav_livebids, R.id.nav_help, R.id.nav_profile, R.id.nav_credit, R.id.nav_driver, R.id.nav_leaderboard,
+                R.id.nav_dashbaord, R.id.nav_livebids, R.id.nav_bidresults, R.id.nav_help, R.id.nav_profile, R.id.nav_credit, R.id.nav_driver, R.id.nav_leaderboard,
                 R.id.nav_notifications, R.id.nav_offer, R.id.nav_settings)
                 .setOpenableLayout(drawer)
                 .build();

@@ -22,10 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class progressbar extends AppCompatActivity {
-    private FirebaseFirestore db;
-    private FirebaseAuth mAuth;
-    ProgressBar loadingPB;
-    LocationRequest locationRequest;
+
     FusedLocationProviderClient fusedLocationProviderClient;
     private final int PERMISSION_FINE_LOCATION = 99;
 

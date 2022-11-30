@@ -61,15 +61,15 @@ public class loggin extends AppCompatActivity {
                     return;
                 }
                 mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
-                    if(task.isSuccessful())
+                   if(task.isSuccessful())
+//                    if(true)
                     {
                         Toast.makeText(loggin.this,"You Have Successfully logged In", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(loggin.this, AfterLogin.class));
                         finish();
-                    }
-                    else
+                    } else
                     {
-                        Toast.makeText(loggin.this,"Wrong Email or Password", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(loggin.this,task.getException().toString(), Toast.LENGTH_SHORT).show();
                     }
 
                 });
@@ -80,6 +80,7 @@ public class loggin extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(loggin.this, Registration.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

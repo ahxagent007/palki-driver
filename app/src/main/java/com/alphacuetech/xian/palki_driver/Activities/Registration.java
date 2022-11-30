@@ -59,6 +59,7 @@ public class Registration extends AppCompatActivity {
         go_login_btn.setOnClickListener(view ->{
             Intent intent = new Intent(Registration.this, loggin.class);
             startActivity(intent);
+            finish();
         });
     };
 
