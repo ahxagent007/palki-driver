@@ -29,11 +29,11 @@
             android:padding="4dp">
 
             <TextView
-                android:id="@+id/auctionId"
+                android:id="@+id/cartypId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="2dp"
-                android:text="456464697"
+                android:text="Sedan"
                 android:textColor="@color/purple_500"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -53,14 +53,22 @@
                 android:padding="2dp"
                 android:text="To location"
                 android:textColor="@color/black" />
-
             <TextView
-                android:id="@+id/cardType"
+                android:id="@+id/seatCap"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="2dp"
-                android:text="Sedan"
+                android:text="Seat : 04"
                 android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/dateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:padding="2dp"
+                android:text="17 Jan, 2022 (8.00 am)"
+                android:textColor="@color/teal_700" />
             <GridLayout
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"

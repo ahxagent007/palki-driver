@@ -2,7 +2,6 @@ package com.alphacuetech.xian.palki_driver.ui.LiveBids;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,23 +13,15 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.alphacuetech.xian.palki_driver.Activities.loggin;
 import com.alphacuetech.xian.palki_driver.R;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class livebids_adaptor  extends RecyclerView.Adapter<livebids_adaptor.livebids_viewholder>
 {
@@ -52,10 +43,11 @@ public class livebids_adaptor  extends RecyclerView.Adapter<livebids_adaptor.liv
 
     @Override
     public void onBindViewHolder(@NonNull livebids_viewholder holder, int position) {
-        holder.auctionId.setText("Id: " + bidList.get(position).getAuction_id());
-        holder.fromAddress.setText("From: "+bidList.get(position).getFrom());
-        holder.toAddress.setText("To: "+bidList.get(position).getTo());
-        holder.carType.setText("Car Type: "+bidList.get(position).getVehicle());
+        holder.carType.setText(bidList.get(position).getCarType());
+        holder.fromAddress.setText("From: "+bidList.get(position).getCurrentLoc());
+        holder.toAddress.setText("To: "+bidList.get(position).getDestLoc());
+        holder.seatCap.setText("Seat : "+bidList.get(position).getSeatcap());
+        holder.dateTime.setText("Date : "+bidList.get(position).getDate_() + " ( " +bidList.get(position).getTime_() + " )");
     }
 
     @Override
@@ -64,15 +56,16 @@ public class livebids_adaptor  extends RecyclerView.Adapter<livebids_adaptor.liv
     }
 
     public class livebids_viewholder extends RecyclerView.ViewHolder{
-        TextView auctionId, fromAddress, toAddress, carType;
+        TextView seatCap, fromAddress, toAddress, carType, dateTime;
         int position;
         private TextInputLayout offer_amount;
         public livebids_viewholder(@NonNull View itemView) {
             super(itemView);
-            auctionId = itemView.findViewById(R.id.auctionId);
+            carType = itemView.findViewById(R.id.cartypId);
             fromAddress = itemView.findViewById(R.id.fromAddress);
             toAddress = itemView.findViewById(R.id.toAddress);
-            carType = itemView.findViewById(R.id.cardType);
+            seatCap = itemView.findViewById(R.id.seatCap);
+            dateTime = itemView.findViewById(R.id.dateTime);
             offer_amount = itemView.findViewById(R.id.offer_amount);
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -93,13 +86,12 @@ public class livebids_adaptor  extends RecyclerView.Adapter<livebids_adaptor.liv
                     }
 //                    Log.d("star", String.valueOf(bidList.get(position).getAuction_id()));
                     dataModel select_item = bidList.get(position);
-                    long auc_id = select_item.getAuction_id();
-                    boolean is_AC = true;
-                    String car_cond = "Good";
-                    String carModel = select_item.getVehicle();
-                    String carReg = "Dhaka-KHA-1207";
+                    String auc_id = select_item.getAuction_id();
+                    String carCondition = "ac";
+                    String carModel = select_item.getCarType();
                     String dirver_id = user.getUid();
-                    String driver_email = user.getEmail();
+                    String rating = "4.8";
+                    String seatCap = select_item.getSeatcap();
 
                     new AlertDialog.Builder(mContext)
                             .setTitle("Confirm")
@@ -108,7 +100,7 @@ public class livebids_adaptor  extends RecyclerView.Adapter<livebids_adaptor.liv
                             .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 
                                 public void onClick(DialogInterface arg0, int arg1) {
-                                  boolean is_Successful = create_offer(auc_id, Integer.parseInt(amount), is_AC, car_cond, carModel, carReg,dirver_id,driver_email);
+                                  boolean is_Successful = create_offer(auc_id, Integer.parseInt(amount), carCondition, carModel, dirver_id, rating, seatCap);
                                     if(is_Successful){
                                         Toast.makeText(mContext,"You have successfully submit a offer.", Toast.LENGTH_SHORT).show();
                                     } else {
@@ -122,18 +114,20 @@ public class livebids_adaptor  extends RecyclerView.Adapter<livebids_adaptor.liv
         }
     }
 
-        private boolean create_offer(long auctionId, int bidAmount, boolean is_carAc, String car_condition, String carModel, String car_registrarion_number,String driver_id, String driver_email) {
+        private boolean create_offer(String auctionId, int bidAmount, String carCondition, String carModel, String driver_id, String rating, String seatCap) {
 
             db = FirebaseDatabase.getInstance();
-            DatabaseReference createOffer = db.getReference().child("BIDS").child(String.valueOf(auctionId)).child(driver_id);
+            String bidId = db.getReference().child(String.valueOf(auctionId)).push().getKey();
+            DatabaseReference createOffer = db.getReference().child("BIDS2").child(String.valueOf(auctionId)).child(bidId);
 
-            createOffer.child("auction_id").setValue(auctionId);
-            createOffer.child("bid_amount").setValue(bidAmount);
-            createOffer.child("car_ac").setValue(is_carAc);
-            createOffer.child("car_condition").setValue(car_condition);
-            createOffer.child("car_model").setValue(carModel);
-            createOffer.child("car_registrarion_number").setValue(car_registrarion_number);
-            createOffer.child("dirver_email_address").setValue(driver_email);
+            createOffer.child("auctionID").setValue(auctionId);
+            createOffer.child("bidAmount").setValue(bidAmount);
+            createOffer.child("bidID").setValue(bidId);
+            createOffer.child("carType").setValue(carModel);
+            createOffer.child("condition").setValue(carCondition);
+            createOffer.child("driverID").setValue(driver_id);
+            createOffer.child("rating").setValue(rating);
+            createOffer.child("seatCap").setValue(seatCap);
             return true;
         }
 

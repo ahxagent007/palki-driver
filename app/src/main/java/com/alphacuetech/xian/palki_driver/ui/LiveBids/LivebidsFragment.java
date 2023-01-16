@@ -29,6 +29,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Map;
 
 public class LivebidsFragment extends Fragment {
@@ -39,7 +40,7 @@ public class LivebidsFragment extends Fragment {
     LocationManager locationManager;
     FusedLocationProviderClient fusedLocationProviderClient;
     FirebaseDatabase db = FirebaseDatabase.getInstance();
-    DatabaseReference reference = db.getReference().child("AUCTION");
+    DatabaseReference reference = db.getReference().child("AUCTION2");
     ArrayList<dataModel> bids_details = new ArrayList<>();
 
 
@@ -59,20 +60,24 @@ public class LivebidsFragment extends Fragment {
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 dataModel live_bid = snapshot.getValue(dataModel.class);
                 Map map = (Map) snapshot.getValue();
-                Map from_latLng =(Map) map.get("from_latLng");
-                double from_lat = (double) from_latLng.get("latitude");
-                double from_lon = (double) from_latLng.get("longitude");
+
+                String running = (String) map.get("running");
+                String from_latLng_string =(String) map.get("from_latLng");
+                from_latLng_string =(from_latLng_string.split(":"))[1].replaceAll("[()]","");
+
+                double from_lat = Double.parseDouble((from_latLng_string.split(","))[0]);
+                double from_lon =  Double.parseDouble((from_latLng_string.split(","))[1]);
 
                 if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
                     fusedLocationProviderClient.getLastLocation().addOnSuccessListener( new OnSuccessListener<Location>() {
                         @Override
                         public void onSuccess(Location location) {
-                                Log.d("star","**************************************************************");
+                                Log.d("star","**************************************************************"+running);
 
                                 double distance_KM = distance(from_lat,from_lon,location.getLatitude(),location.getLongitude()) * 1.60934;
                                 Log.d("distance Miles", String.valueOf(distance_KM));
 
-                                if(distance_KM <= 5.00){
+                                if(distance_KM <= 10.00 && running.equals("Yes")){
                                     bids_details.add(live_bid);
                                     adapter.notifyDataSetChanged();
                                }
