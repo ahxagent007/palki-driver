@@ -29,7 +29,11 @@
             android:padding="4dp">
 
             <TextView
+<<<<<<< HEAD
                 android:id="@+id/carType"
+=======
+                android:id="@+id/cartypId"
+>>>>>>> 384aba8f124ae9f7845718ace7b26677cac65f81
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="2dp"

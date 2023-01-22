@@ -13,16 +13,21 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="7dc4c1ad-2935-4613-9c73-cc366e897c4b" name="Changes" comment="complete-intial-apk">
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/alphacuetech/xian/palki_driver/ui/CurrentTrips/currentTripsFragment.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/alphacuetech/xian/palki_driver/ui/CurrentTrips/currentTripsModel.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/alphacuetech/xian/palki_driver/ui/CurrentTrips/currentTrips_adapter.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/currenttrips_design.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_currenttrips.xml" afterDir="false" />
+=======
+    <list default="true" id="7dc4c1ad-2935-4613-9c73-cc366e897c4b" name="Changes" comment="">
+>>>>>>> 384aba8f124ae9f7845718ace7b26677cac65f81
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
@@ -36,6 +41,14 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_main_drawer.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/mobile_navigation.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/alphacuetech/xian/palki_driver/ui/LiveBids/LivebidsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/alphacuetech/xian/palki_driver/ui/LiveBids/LivebidsFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/alphacuetech/xian/palki_driver/ui/LiveBids/dataModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/alphacuetech/xian/palki_driver/ui/LiveBids/dataModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/alphacuetech/xian/palki_driver/ui/LiveBids/livebids_adaptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/alphacuetech/xian/palki_driver/ui/LiveBids/livebids_adaptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/livebids_recyleview_design.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/livebids_recyleview_design.xml" afterDir="false" />
+>>>>>>> 384aba8f124ae9f7845718ace7b26677cac65f81
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

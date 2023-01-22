@@ -28,6 +28,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Map;
 
 public class LivebidsFragment extends Fragment {
@@ -71,11 +72,23 @@ public class LivebidsFragment extends Fragment {
                     fusedLocationProviderClient.getLastLocation().addOnSuccessListener( new OnSuccessListener<Location>() {
                         @Override
                         public void onSuccess(Location location) {
+<<<<<<< HEAD
                             double distance_KM = distance(from_lat,from_lon,location.getLatitude(),location.getLongitude()) * 1.60934;
                             if(distance_KM <= 10.00 && running.equals("Yes")){
                                 bids_details.add(live_bid);
                                 adapter.notifyDataSetChanged();
                             }
+=======
+                                Log.d("star","**************************************************************"+running);
+
+                                double distance_KM = distance(from_lat,from_lon,location.getLatitude(),location.getLongitude()) * 1.60934;
+                                Log.d("distance Miles", String.valueOf(distance_KM));
+
+                                if(distance_KM <= 10.00 && running.equals("Yes")){
+                                    bids_details.add(live_bid);
+                                    adapter.notifyDataSetChanged();
+                               }
+>>>>>>> 384aba8f124ae9f7845718ace7b26677cac65f81
                         }
                     });
                 }
