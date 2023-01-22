@@ -5,7 +5,6 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,10 +17,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alphacuetech.xian.palki_driver.R;
-import com.alphacuetech.xian.palki_driver.databinding.FragmentLivebidsBinding;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -35,13 +34,14 @@ public class LivebidsFragment extends Fragment {
 
     RecyclerView recyclerView;
     livebids_adaptor adapter;
-    private FragmentLivebidsBinding binding;
+    private LivebidsFragment binding;
     LocationManager locationManager;
     FusedLocationProviderClient fusedLocationProviderClient;
     FirebaseDatabase db = FirebaseDatabase.getInstance();
-    DatabaseReference reference = db.getReference().child("AUCTION");
+    DatabaseReference reference = db.getReference().child("AUCTION2");
     ArrayList<dataModel> bids_details = new ArrayList<>();
 
+    FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -59,23 +59,23 @@ public class LivebidsFragment extends Fragment {
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 dataModel live_bid = snapshot.getValue(dataModel.class);
                 Map map = (Map) snapshot.getValue();
-                Map from_latLng =(Map) map.get("from_latLng");
-                double from_lat = (double) from_latLng.get("latitude");
-                double from_lon = (double) from_latLng.get("longitude");
+
+                String running = (String) map.get("running");
+                String from_latLng_string =(String) map.get("from_latLng");
+                from_latLng_string =(from_latLng_string.split(":"))[1].replaceAll("[()]","");
+
+                double from_lat = Double.parseDouble((from_latLng_string.split(","))[0]);
+                double from_lon =  Double.parseDouble((from_latLng_string.split(","))[1]);
 
                 if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
                     fusedLocationProviderClient.getLastLocation().addOnSuccessListener( new OnSuccessListener<Location>() {
                         @Override
                         public void onSuccess(Location location) {
-                                Log.d("star","**************************************************************");
-
-                                double distance_KM = distance(from_lat,from_lon,location.getLatitude(),location.getLongitude()) * 1.60934;
-                                Log.d("distance Miles", String.valueOf(distance_KM));
-
-                                if(distance_KM <= 5.00){
-                                    bids_details.add(live_bid);
-                                    adapter.notifyDataSetChanged();
-                               }
+                            double distance_KM = distance(from_lat,from_lon,location.getLatitude(),location.getLongitude()) * 1.60934;
+                            if(distance_KM <= 10.00 && running.equals("Yes")){
+                                bids_details.add(live_bid);
+                                adapter.notifyDataSetChanged();
+                            }
                         }
                     });
                 }

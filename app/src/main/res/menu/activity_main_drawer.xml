@@ -19,9 +19,14 @@
             android:title="@string/menu_livebids" />
 
         <item
-            android:id="@+id/nav_bidresults"
+            android:id="@+id/nav_bidhistory"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_bidresults" />
+            android:title="@string/menu_bidhistory" />
+
+        <item
+            android:id="@+id/nav_currentTrips"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu_currentTrips" />
 
         <item
             android:id="@+id/nav_leaderboard"

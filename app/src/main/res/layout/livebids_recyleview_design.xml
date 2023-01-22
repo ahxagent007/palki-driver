@@ -29,11 +29,11 @@
             android:padding="4dp">
 
             <TextView
-                android:id="@+id/auctionId"
+                android:id="@+id/carType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="2dp"
-                android:text="456464697"
+                android:text="Sedan"
                 android:textColor="@color/purple_500"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -53,48 +53,56 @@
                 android:padding="2dp"
                 android:text="To location"
                 android:textColor="@color/black" />
-
             <TextView
-                android:id="@+id/cardType"
+                android:id="@+id/seatCap"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="2dp"
-                android:text="Sedan"
+                android:text="Seat : 04"
                 android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/dateTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:padding="2dp"
+                android:text="17 Jan, 2022 (8.00 am)"
+                android:textColor="@color/teal_700" />
             <GridLayout
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:columnOrderPreserved="false"
                 android:columnCount="3">
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_row="0"
-                android:layout_column="0"
-                android:id="@+id/offer_amount"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
-                android:hint="Offer Amount"
-                android:textColorHint="#AFACAC"
-                app:hintTextColor="@color/black">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:id="@+id/offer_amount"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="150dp"
                     android:layout_height="match_parent"
-                    android:background="#FFFFFF"
-                    android:inputType="number"
+                    android:hint="Offer Amount"
+                    android:textColorHint="#AFACAC"
+                    app:hintTextColor="@color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#FFFFFF"
+                        android:inputType="number"
+                        android:textColor="@color/black" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <Button
+                    android:id="@+id/btn_makeorder"
+                    android:layout_row="0"
+                    android:layout_column="2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:background="@drawable/roundedcornerbtn"
+                    android:text="Make Offer"
+                    android:layout_gravity="end"
                     android:textColor="@color/black" />
-            </com.google.android.material.textfield.TextInputLayout>
-            <Button
-                android:id="@+id/btn_makeorder"
-                android:layout_row="0"
-                android:layout_column="2"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:background="@drawable/roundedcornerbtn"
-                android:text="Make Offer"
-                android:layout_gravity="end"
-                android:textColor="@color/black" />
             </GridLayout>
 
         </LinearLayout>

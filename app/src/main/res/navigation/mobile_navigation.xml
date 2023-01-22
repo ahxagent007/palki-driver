@@ -18,10 +18,15 @@
         tools:layout="@layout/fragment_livebids" />
 
     <fragment
-        android:id="@+id/nav_bidresults"
-        android:name="com.alphacuetech.xian.palki_driver.ui.BidResults.BidresultsFragment"
-        android:label="@string/menu_bidresults"
-        tools:layout="@layout/fragment_bidresults" />
+        android:id="@+id/nav_bidhistory"
+        android:name="com.alphacuetech.xian.palki_driver.ui.BidHistory.BidhistoryFragment"
+        android:label="@string/menu_bidhistory"
+        tools:layout="@layout/fragment_bidhistory" />
+    <fragment
+        android:id="@+id/nav_currentTrips"
+        android:name="com.alphacuetech.xian.palki_driver.ui.CurrentTrips.currentTripsFragment"
+        android:label="@string/menu_currentTrips"
+        tools:layout="@layout/fragment_currenttrips" />
 
 
     <fragment
