@@ -1,5 +1,6 @@
 # Created by https://www.toptal.com/developers/gitignore/api/androidstudio,java,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=androidstudio,java,windows
+.gradle
 
 ### Java ###
 # Compiled class file
@@ -10,7 +11,7 @@
 
 # BlueJ files
 *.ctxt
-
+.idea
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
