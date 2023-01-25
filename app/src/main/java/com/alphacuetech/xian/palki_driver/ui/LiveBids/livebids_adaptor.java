@@ -94,17 +94,19 @@ public class livebids_adaptor  extends RecyclerView.Adapter<livebids_adaptor.liv
                             Map value =(Map) dataSnapshot.getValue();
                             boolean isReturn = false;
 
-                            for (Object key : value.keySet()) {
-                                Map driverIdMap =(Map) value.get(key);
-                                String driverId =(String) driverIdMap.get("driver_id");
-                                if(driverId.equals(currentUserID)){
-                                    new AlertDialog.Builder(mContext)
-                                            .setTitle("Alert")
-                                            .setMessage("Please Complete Your Current Trip.")
-                                            .setNegativeButton(android.R.string.ok, null).create().show();
+                            if(value != null) {
+                                for (Object key : value.keySet()) {
+                                    Map driverIdMap = (Map) value.get(key);
+                                    String driverId = (String) driverIdMap.get("driver_id");
+                                    if (driverId.equals(currentUserID)) {
+                                        new AlertDialog.Builder(mContext)
+                                                .setTitle("Alert")
+                                                .setMessage("Please Complete Your Current Trip.")
+                                                .setNegativeButton(android.R.string.ok, null).create().show();
 
-                                    isReturn = true;
-                                    break;
+                                        isReturn = true;
+                                        break;
+                                    }
                                 }
                             }
 
