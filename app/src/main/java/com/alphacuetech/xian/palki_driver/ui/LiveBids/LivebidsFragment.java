@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,13 +73,6 @@ public class LivebidsFragment extends Fragment {
                     fusedLocationProviderClient.getLastLocation().addOnSuccessListener( new OnSuccessListener<Location>() {
                         @Override
                         public void onSuccess(Location location) {
-<<<<<<< HEAD
-                            double distance_KM = distance(from_lat,from_lon,location.getLatitude(),location.getLongitude()) * 1.60934;
-                            if(distance_KM <= 10.00 && running.equals("Yes")){
-                                bids_details.add(live_bid);
-                                adapter.notifyDataSetChanged();
-                            }
-=======
                                 Log.d("star","**************************************************************"+running);
 
                                 double distance_KM = distance(from_lat,from_lon,location.getLatitude(),location.getLongitude()) * 1.60934;
@@ -88,7 +82,7 @@ public class LivebidsFragment extends Fragment {
                                     bids_details.add(live_bid);
                                     adapter.notifyDataSetChanged();
                                }
->>>>>>> 384aba8f124ae9f7845718ace7b26677cac65f81
+
                         }
                     });
                 }
